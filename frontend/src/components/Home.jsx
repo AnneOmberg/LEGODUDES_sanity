@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 import { fetchAllProducts } from "../../sanity/services/productServices"
 import ProductCard from "./ProductCard"
 
-export default function Home({ setAmount, setCart, cart }) {
-
+export default function Home({setAmount, cart, setCart}){
     const [products, setProducts] = useState(null)
 
     const getAllProducts = async () => {
@@ -17,13 +16,8 @@ export default function Home({ setAmount, setCart, cart }) {
 
     console.log(products)
 
-    return (
-        <>
-            <main>
-                <h2>Velkommen til LegoDudes</h2>
-                {/* spørsmålstegnet for å kun rendre når det kommer data */}
-                {products?.map((product, index) => <ProductCard key={index} productInfo={product} setAmount={setAmount} setCart={setCart} cart={cart} />)}
-            </main>
-        </>
-    )
+    return (<main>
+            <h2>Velkommen til LEGO-dudes</h2>
+            {products?.map((product, index) => <ProductCard key={index} productInfo={product} setAmount={setAmount} cart={cart} setCart={setCart}  />)}
+        </main>)
 }

@@ -14,9 +14,13 @@ export const products = {
             type: "slug",
             options: {
                 source: "productname",
-                // s står for space og g gjelder for hele, altså global
                 slugify: input => input.toLowerCase().replace(/\s+/g, '-')
             }
+        },
+        {
+            title: "beskrivelse",
+            name: "description",
+            type: "text"
         },
         {
             title: "Pris",
@@ -32,12 +36,20 @@ export const products = {
             title: "Kategori",
             name: "category",
             type: "reference",
+            // Bruker to: for å sende refrences til categories
             to: [{ type: "categories" }]
         },
         {
             title: "Lager",
             name: "stock",
             type: "number"
+        },
+        {
+            title: "Anmeldelser",
+            name: "reviews",
+            type: "array",
+            // bruker of for å beskrive an array av typen reviews
+            of: [{ type: "reviews" }]
         }
     ]
 }

@@ -1,6 +1,5 @@
-// peker på categories.js 
 import { categories } from "./categories";
 import { products } from "./products";
+import { reviews } from "./reviews";
 
-// Alle schemastyper går inn i brackets 
-export const schemaTypes = [categories, products]
+export const schemaTypes = [categories, products, reviews]
